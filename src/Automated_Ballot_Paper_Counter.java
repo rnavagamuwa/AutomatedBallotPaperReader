@@ -1,11 +1,12 @@
-import javax.imageio.ImageIO;
 import javax.swing.*;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.image.BufferedImage;
 import java.io.File;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Iterator;
 
 public class Automated_Ballot_Paper_Counter {
 
@@ -22,7 +23,14 @@ public class Automated_Ballot_Paper_Counter {
     private JButton symbolDirBtn;
     private JLabel abcLbl;
     private JButton readButton;
+    private JTextField ballotPaperDir;
+    private JButton button1;
+    private JButton countVotesForAllButton;
+    private JLabel winningParty;
     private JLabel errorLbl;
+    private ArrayList<PartyVote> votes = new ArrayList<PartyVote>();
+    private int numberOfParties = 0;
+
 
     public Automated_Ballot_Paper_Counter() {
 
@@ -111,6 +119,52 @@ public class Automated_Ballot_Paper_Counter {
                // abcLbl.setText("Done.");
             }
         });
+
+        countVotesForAllButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if(ballotPaperDir.getText()!= ""){
+                    File dir = new File(ballotPaperDir.getText());
+                    File[] directoryListing = dir.listFiles();
+                    if (directoryListing != null) {
+                        for (File child : directoryListing) {
+                            VoteCounter t=new VoteCounter(child.getPath(),partySymbolDirTxt.getText());
+                            if(t.isSuccess){
+                                JLabel votedPic = new JLabel();
+                                votedPic.setSize(240,500);
+                                Image dimgV =  t.getOutputImg().getScaledInstance(votedPic.getWidth(), votedPic.getHeight(),Image.SCALE_SMOOTH);
+                                votedPic.setIcon(new ImageIcon(dimgV));
+                                setPartyVotes(t.getPartySymbol());
+
+                            }else{
+                                errorLbl.setText("Disqualified vote !");
+                            }
+
+                        }
+                    }
+                }
+                  Collections.sort(votes);
+                  winningParty.setText(votes.get(numberOfParties-1).getName() +" with " + votes.get(numberOfParties-1).getScore() + " votes.");
+            }
+        });
+    }
+
+    private void setPartyVotes(String partyName){
+        Iterator<PartyVote> iterator = votes.iterator();
+        PartyVote currentParty;
+        Boolean isExists = false;
+        while (iterator.hasNext()) {
+            currentParty = iterator.next();
+            if (currentParty.getName()==partyName){
+                currentParty.setScore(currentParty.getScore()+1);
+                isExists = true;
+            }
+        }
+
+        if (!isExists){
+            votes.add(new PartyVote(1,partyName));
+            numberOfParties++;
+        }
     }
 
     public static void main(String[] args) {
@@ -121,5 +175,4 @@ public class Automated_Ballot_Paper_Counter {
         frame.setVisible(true);
 
     }
-
 }
