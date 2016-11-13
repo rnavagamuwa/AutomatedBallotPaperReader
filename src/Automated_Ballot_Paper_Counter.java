@@ -191,7 +191,7 @@ public class Automated_Ballot_Paper_Counter {
         Boolean isExists = false;
         while (iterator.hasNext()) {
             currentParty = iterator.next();
-            if (currentParty.getName()==partyName){
+            if (partyName.equals(currentParty.getName())){
                 currentParty.setScore(currentParty.getScore()+1);
                 isExists = true;
             }
