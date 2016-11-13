@@ -216,7 +216,7 @@ public class VoteCounter {
             pt1.x = first;
             pt2.y = row.row;
             pt2.x = last;
-            Imgproc.line(im, pt1, pt2, new Scalar(0, 255, 0), 3);
+            Imgproc.line(im, pt1, pt2, new Scalar(255, 0, 0), 3);
         }
     }
 
@@ -259,14 +259,14 @@ public class VoteCounter {
                 pt1.x = col.col;
                 pt2.y = endRow;
                 pt2.x = col.col;
-                Imgproc.line(im, pt1, pt2, new Scalar(0, 255, 0), 3);
+                Imgproc.line(im, pt1, pt2, new Scalar(255, 0, 0), 3);
             }else if (rowContain > rowContainLimit && isPref){
                 prefCol.add(col);
                 pt1.y = startRow;
                 pt1.x = col.col;
                 pt2.y = endRow;
                 pt2.x = col.col;
-                Imgproc.line(im, pt1, pt2, new Scalar(0, 255, 0), 3);
+                Imgproc.line(im, pt1, pt2, new Scalar(255, 0, 0), 3);
             }
 
         }

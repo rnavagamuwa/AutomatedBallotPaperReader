@@ -101,22 +101,13 @@
               <grid row="5" column="11" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
             </constraints>
           </hspacer>
-          <component id="d4c17" class="javax.swing.JButton" binding="openBtn">
-            <constraints>
-              <grid row="5" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-            </constraints>
-            <properties>
-              <hideActionText value="true"/>
-              <horizontalAlignment value="0"/>
-              <text value="Load Image"/>
-            </properties>
-          </component>
+
           <component id="59821" class="javax.swing.JButton" binding="readButton" default-binding="true">
             <constraints>
               <grid row="5" column="1" row-span="1" col-span="4" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
-              <text value="Read Image"/>
+              <text value="Load image to find the voted party and preferential votes"/>
             </properties>
           </component>
         </children>
@@ -126,18 +117,7 @@
           <grid row="1" column="7" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
         </constraints>
       </vspacer>
-      <grid id="4aba9" binding="originalImgPanel" layout-manager="BorderLayout" hgap="0" vgap="0">
-        <constraints>
-          <grid row="3" column="1" row-span="17" col-span="3" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
-            <minimum-size width="250" height="450"/>
-            <preferred-size width="250" height="450"/>
-            <maximum-size width="250" height="450"/>
-          </grid>
-        </constraints>
-        <properties/>
-        <border type="none"/>
-        <children/>
-      </grid>
+
       <vspacer id="2aac3">
         <constraints>
           <grid row="20" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
@@ -171,7 +151,7 @@
               <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
-              <text value="Vote for the party No : "/>
+              <text value="Voted Party No : "/>
             </properties>
           </component>
           <component id="fe2df" class="javax.swing.JLabel">
@@ -179,7 +159,7 @@
               <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
-              <text value="Preferential votes are "/>
+              <text value="Preferential vote : "/>
             </properties>
           </component>
           <component id="ef165" class="javax.swing.JLabel" binding="mainVoteLbl">

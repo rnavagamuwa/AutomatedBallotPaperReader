@@ -10,7 +10,6 @@ import java.io.File;
 public class Automated_Ballot_Paper_Counter {
 
     private JPanel panel1;
-    private JButton openBtn;
     private JLabel prefVotesLbl;
     private JLabel mainVoteLbl;
     private JTextField filePathText;
@@ -27,27 +26,6 @@ public class Automated_Ballot_Paper_Counter {
 
     public Automated_Ballot_Paper_Counter() {
 
-        openBtn.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-
-                try{
-                    BufferedImage myPicture = ImageIO.read(new File(filePathText.getText()));
-                    JLabel originalPic = new JLabel();
-                    originalPic.setSize(240,450);
-                    Image dimg =  myPicture.getScaledInstance(originalPic.getWidth(), originalPic.getHeight(),Image.SCALE_SMOOTH);
-                    originalPic.setIcon(new ImageIcon(dimg));
-                    originalImgPanel.removeAll();
-                    originalImgPanel.add(originalPic);
-                    originalImgPanel.revalidate();
-                }catch(Exception ex){
-
-                }
-
-
-            }
-
-        });
         fileBtn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
