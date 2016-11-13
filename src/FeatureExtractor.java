@@ -66,9 +66,6 @@ public class FeatureExtractor {
 
             }
         }
-       // imwrite("E:/croppedGray.jpg", gray);
-        //imwrite("E:/croppedFinal.jpg", im);
-
 
     }
 
@@ -134,8 +131,6 @@ public class FeatureExtractor {
                 p1.x = m_x;
                 p1.y = m_y;
                 Imgproc.line(im, p1, p1, new Scalar(0, 0, 255), 3);
-
-              //  imwrite("E:/" + partyFeature.getName(), im);
                 System.out.println("File: " + file.getName());
             }
         }

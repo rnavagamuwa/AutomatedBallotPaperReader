@@ -36,7 +36,7 @@ public class MainFrame {
         openBtn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                
+
                 try{
                     BufferedImage myPicture = ImageIO.read(new File(filePathText.getText()));
                     JLabel originalPic = new JLabel();
@@ -87,7 +87,6 @@ public class MainFrame {
                         {
                             if (getSelectedFile().isFile())
                             {
-                                // beep
                                 return;
                             }
                             else
@@ -108,7 +107,7 @@ public class MainFrame {
                     if(filePathText.getText()!= ""){
 
 
-                        Test t=new Test(filePathText.getText(),partySymbolDirTxt.getText());
+                        VoteCounter t=new VoteCounter(filePathText.getText(),partySymbolDirTxt.getText());
                         if(t.isSuccess){
                             JLabel votedPic = new JLabel();
                             votedPic.setSize(240,500);
