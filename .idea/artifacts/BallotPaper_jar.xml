@@ -1,0 +1,11 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="BallotPaper:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/BallotPaper_jar</output-path>
+    <root id="archive" name="BallotPaper.jar">
+      <element id="module-output" name="BallotPaper" />
+      <element id="library" level="project" name="opencv-310" />
+      <element id="file-copy" path="$PROJECT_DIR$/libs/libopencv_java310.so" />
+      <element id="file-copy" path="$PROJECT_DIR$/libs/opencv_java310.so" />
+    </root>
+  </artifact>
+</component>

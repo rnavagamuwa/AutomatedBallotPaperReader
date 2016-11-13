@@ -1,5 +1,3 @@
-import org.opencv.core.Core;
-
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import javax.swing.filechooser.FileNameExtensionFilter;
@@ -9,10 +7,6 @@ import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 import java.io.File;
 
-/**
- * @author MaN
- *         on 11/8/2016.
- */
 public class MainFrame {
 
     private JPanel panel1;

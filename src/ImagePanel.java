@@ -1,7 +1,4 @@
-/**
- * @author MaN
- *         on 11/9/2016.
- */
+
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
 import java.io.File;
