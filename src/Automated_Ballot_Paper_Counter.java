@@ -7,7 +7,7 @@ import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 import java.io.File;
 
-public class MainFrame {
+public class Automated_Ballot_Paper_Counter {
 
     private JPanel panel1;
     private JButton openBtn;
@@ -25,7 +25,7 @@ public class MainFrame {
     private JButton readButton;
     private JLabel errorLbl;
 
-    public MainFrame() {
+    public Automated_Ballot_Paper_Counter() {
 
         openBtn.addActionListener(new ActionListener() {
             @Override
@@ -136,8 +136,8 @@ public class MainFrame {
     }
 
     public static void main(String[] args) {
-        JFrame frame = new JFrame("MainFrame");
-        frame.setContentPane(new MainFrame().panel1);
+        JFrame frame = new JFrame("Automated_Ballot_Paper_Counter");
+        frame.setContentPane(new Automated_Ballot_Paper_Counter().panel1);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
         frame.setVisible(true);
