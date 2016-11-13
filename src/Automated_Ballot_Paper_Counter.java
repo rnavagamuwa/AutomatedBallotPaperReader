@@ -24,7 +24,7 @@ public class Automated_Ballot_Paper_Counter {
     private JLabel abcLbl;
     private JButton readButton;
     private JTextField ballotPaperDir;
-    private JButton button1;
+    private JButton ballotPaperDirButton;
     private JButton countVotesForAllButton;
     private JLabel winningParty;
     private JLabel errorLbl;
@@ -145,6 +145,42 @@ public class Automated_Ballot_Paper_Counter {
                 }
                   Collections.sort(votes);
                   winningParty.setText(votes.get(numberOfParties-1).getName() +" with " + votes.get(numberOfParties-1).getScore() + " votes.");
+            }
+        });
+
+        ballotPaperDirButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JFileChooser fc;
+                if(ballotPaperDir.getText()!=""){
+                    fc = new JFileChooser(new File(ballotPaperDirButton.getText())){
+                        public void approveSelection()
+                        {
+                            if (getSelectedFile().isFile())
+                            {
+                                // beep
+                                return;
+                            }
+                            else
+                                super.approveSelection();
+                        }
+                    };;
+                }else{
+                    fc= new JFileChooser(){
+                        public void approveSelection()
+                        {
+                            if (getSelectedFile().isFile())
+                            {
+                                return;
+                            }
+                            else
+                                super.approveSelection();
+                        }
+                    };
+                }
+                fc.setFileSelectionMode(JFileChooser.FILES_AND_DIRECTORIES);
+                fc.showOpenDialog(fileChoosePanel);
+                ballotPaperDir.setText(fc.getSelectedFile().toString());
             }
         });
     }
